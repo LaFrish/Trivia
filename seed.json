@@ -1,0 +1,73 @@
+[{
+	"question": "How many times had the Olympics been held in South America before 2016?",
+	"options": ["Once", "Twice", "Never"],
+	"correct": "Never"
+}, {
+	"question": "Which are being included for the first time in many decades?",
+	"options": ["Rugby & Golf", "Golf & BMX Bike", "Rugby & Cricket"],
+	"correct": "Rugby & Golf"
+}, {
+	"question": "What will be lit with a flame during the opening ceremony?",
+	"options": ["The Olympic Torch", "The Olympic Cauldron", "The Olympic Mascot"],
+	"correct": "The Olympic Torch"
+}, {
+	"question": "The torch relay will begin on April 21st in what city?",
+	"options": ["Rio de Janeiro", "London", "Olympia"],
+	"correct": "Olympia"
+}, {
+	"question": "Organizers will prepare approximately how many meals per day to feed athletes?",
+	"options": ["5,000", "30,000", "60,000"],
+	"correct": "60,000"
+}, {
+	"question": "Rio's taxi drivers, or 'taxistas', are being given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?",
+	"options": ["True", "False"],
+	"correct": "True"
+}, {
+	"question": "The first refugee team to ever compete at the Olympic Games will be competing under which flag?",
+	"options": ["Brazil", "Greece", "Olympic"],
+	"correct": "Olympic"
+}, {
+	"question": "Which two types of martial arts are represented in the Summer Olympics?",
+	"options": ["Kung Fu & Tai Chi Chuan", "Karate & Ninjitsu", "Taekwondo & Judo"],
+	"correct": "Taekwondo & Judo"
+}, {
+	"question": "The beach volleyball tournament is being held at?",
+	"options": ["Fort Copacabana", "The Copacabana Club", "Copacabana Beach"],
+	"correct": "Copacabana Beach"
+}, {
+	"question": "Where are the opening and closing ceremonies being held?",
+	"options": ["Joao Havelange Olympic Stadium", "Maracana Stadium", "Maracanazinho Arena"],
+	"correct": "Maracana Stadium"
+}, {
+	"question": "Which is one of the venues for the Rio Olympics?",
+	"options": ["The Olympic Village", "The Olympic Parade", "The Olympic Golf Course"],
+	"correct": "The Olympic Golf Course"
+}, {
+	"question": "How many gold medals will be handed out during at the 2016 Summer Olympics?",
+	"options": ["306", "256", "400"],
+	"correct": "306"
+}, {
+	"question": "There will be a total of 28 sports in the 2016 Summer Olympics?",
+	"options": ["True", "False"],
+	"correct": "True"
+}, {
+	"question": "What is the motto for the 2016 Summer Olympics?",
+	"options": ["One World. One Dream.", "Light the Fire Within", "Live your passion"],
+	"correct": "Live your passion"
+}, {
+	"question": "What is the estimated cost of the 2016 Summer Olympics?",
+	"options": ["6.25 billion", "11.25 billion", "22.25 billion"],
+	"correct": "11.25 billion"
+}, {
+	"question": "The official mascots of the 2016 Summer Olympics are Vinicius and Tom?",
+	"options": ["True", "False"],
+	"correct": "True"
+}, {
+	"question": "When will the 2016 Summer Games end?",
+	"options": ["August 21st", "September 2nd", "October 15th"],
+	"correct": "August 21st"
+}, {
+	"question": "There will be less than 10,000 athletes participating in the 2016 Summer Olympics?",
+	"options": ["True", "False"],
+	"correct": "False (there will be more than 10,500)"
+}]
