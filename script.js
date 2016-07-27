@@ -63,7 +63,7 @@ var chooseAnswer = function(){
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey"); //(2)
     $(".right-or-wrong").show();
     $(".right-or-wrong").text("Right!");
-      score = score + 10;
+      score = score + 1;
     }
     setScore();
     clickCount++;
