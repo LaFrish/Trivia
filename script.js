@@ -15,6 +15,13 @@ var setScore = function() {
     $(".score").html("<p>" + score + " points</p>");
   }
 };
+// var reloading = document.createElement("button");
+//       reloading.textContent = "Click here to play again";
+//       reloading.setAttribute("id", "again");
+//       document.getElementById("score").appendChild(reloading);
+//       reloading.onclick = function(){
+//         window.location.reload();
+//       };
 
 var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
@@ -102,6 +109,7 @@ var chooseAnswer = function(){
 // (1) hide the right/wrong box
 // (2) change answer choice text color back to black
 // (3) hide the next box, etc.
+
 var onNext = function(){
   var random = Math.floor(Math.random() * (triviaPrompts.length));
   questionCount++;
@@ -114,16 +122,14 @@ var onNext = function(){
     chooseAnswer();
   }
 
-// on last question, text in next div changes to "Game over!"
-  if ( questionCount == (triviaPrompts.length-1 ) ) {
-      $(".next").html("Game over! " + " <p class = 'fa fa-play-circle'></p>");
-  } else if ( questionCount > (triviaPrompts.length-1 ) ) {
-    console.log("game over!");
-    // window.open("https://www.youtube.com/v/v4IC7qaNr7I&autoplay=1", "_blank");
-  }
+//end after 3 questions
 
-};
 
+    if ( questionCount == 3 ) {
+              $(".container").hide();
+              $("#score").show();
+            }
+}
 // goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
 $("html").on("keydown", function(e){
