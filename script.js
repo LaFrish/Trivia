@@ -3,7 +3,7 @@ $(document).ready(function(){
   addAnswers();
   setScore();
   chooseAnswer();
-  random();
+  randomize();
 });
 
 var clickCount = 0;
@@ -93,14 +93,17 @@ var chooseAnswer = function(){
   answerChoices();
 };
 
-function random(){
-  var i = Math.floor(Math.random() * triviaPrompts.length)
+
+  var random = Math.floor(Math.random() * triviaPrompts.length);
+
+function randomize(){
+  random = Math.floor(Math.random() * triviaPrompts.length);
 }
 
 var onNext = function(){
   questionCount++;
   if ( questionCount <= (triviaPrompts.length-1)) {
-    random();
+    randomize();
     addQuestion();
     addAnswers();
     $(".right-or-wrong").hide();
