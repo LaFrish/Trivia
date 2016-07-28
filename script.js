@@ -3,10 +3,10 @@ $(document).ready(function(){
   addAnswers();
   setScore();
   chooseAnswer();
-  randomize();
+  // random();
 });
 
-var clickCount = 0;
+var clickCount = 0; //clicks per question should never exceed 1
 var questionCount = 0;
 var score = 0;
 var setScore = function() {
@@ -35,7 +35,7 @@ var triviaPrompts = [
   ["When will the 2016 Summer Games end?",
   ["October 15th", "September 2nd", "August 21st"], "C", ["A", "B"] ],
   ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B"] ],
-  "There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B"] ],
+  ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B"] ],
   ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B"] ],
   ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A"] ],
   ["In what year was Fannie Mae founded?", ["1935", "1938", "1941"], "B", ["A", "C"] ],
@@ -45,11 +45,13 @@ var triviaPrompts = [
   ["True", "False"], "B", ["A"] ],
 ];
 
+// adds the question string to the question div
 var addQuestion = function() {
   console.log(questionCount);
   $(".question").text(triviaPrompts[questionCount][0]);
 };
 
+// adds the answer choices to 3 answer divs
 var addAnswers = function(){
   $("#A").text( triviaPrompts[questionCount][1][0] );
   $("#B").text( triviaPrompts[questionCount][1][1] );
@@ -58,11 +60,16 @@ var addAnswers = function(){
 
 var chooseAnswer = function(){
 
+  // clicking a CORRECT answer div:
+  // (1) changes the text color to white,
+  // (2) changes other answers to grey,
+  // (3) shows if right/wrong & score
   var rightAnswer = function() {
     if (clickCount < 1) {
-    $(this).css("color", "white");
+    $(this).css("color", "white"); // (1)
+      //change other answers to grey
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
-      $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
+      $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey"); //(2)
     $(".right-or-wrong").show();
     $(".right-or-wrong").text("Right!");
       score = score + 1;
@@ -72,10 +79,11 @@ var chooseAnswer = function(){
     $(".next").show();
   };
 
+  // clicking on a WRONG answer div: (1), (2), and (3) remain the same with different right-or-wrong text and different score
   var wrongAnswer = function () {
     if (clickCount < 1) {
-    $(".answer").css("color", "grey");
-    $(this).css("color", "white");
+    $(".answer").css("color", "grey"); //(2)
+    $(this).css("color", "white"); // (1)
     $(".right-or-wrong").show();
     $(".right-or-wrong").text("Nope, it was " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
     clickCount++;
@@ -83,8 +91,9 @@ var chooseAnswer = function(){
     }
   };
 
+  // right/wrong changes occur when one of the answer choice divs is clicked
   var answerChoices = function() {
-    $(".answer").off("click");
+    $(".answer").off("click"); // removes any previously bound click event listeners
     $("#" + triviaPrompts[questionCount][2]).on("click", rightAnswer);
     $("#" + triviaPrompts[questionCount][3][0]).on("click", wrongAnswer);
     $("#" + triviaPrompts[questionCount][3][1]).on("click", wrongAnswer);
@@ -93,17 +102,21 @@ var chooseAnswer = function(){
   answerChoices();
 };
 
+//
+// function random(){
+//   var i = Math.floor(Math.random() * triviaPrompts.length)
+// }
 
-  var random = Math.floor(Math.random() * triviaPrompts.length);
 
-function randomize(){
-  random = Math.floor(Math.random() * triviaPrompts.length);
-}
 
+// clicking next div will progress to the next question and reset for each question, which will:
+// (1) hide the right/wrong box
+// (2) change answer choice text color back to black
+// (3) hide the next box, etc.
 var onNext = function(){
   questionCount++;
   if ( questionCount <= (triviaPrompts.length-1)) {
-    randomize();
+    // random();
     addQuestion();
     addAnswers();
     $(".right-or-wrong").hide();
@@ -113,14 +126,18 @@ var onNext = function(){
     chooseAnswer();
   }
 
-  if ( questionCount == 3 ) {
+// on last question, text in next div changes to "Game over!"
+// clicking the div opens spoopy video (at game over)
+  if ( questionCount == (triviaPrompts.length-1 ) ) {
       $(".next").html("Game over! " + " <p class = 'fa fa-play-circle'></p>");
   } else if ( questionCount > (triviaPrompts.length-1 ) ) {
     console.log("game over!");
+    // window.open("https://www.youtube.com/v/v4IC7qaNr7I&autoplay=1", "_blank");
   }
 
 };
 
+// goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
 $("html").on("keydown", function(e){
   if ($(".next").css("display") !== "none"){
