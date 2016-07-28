@@ -1,14 +1,15 @@
 $(document).ready(function(){
-  addQuestion();
-  addAnswers();
+  addQAs();
   setScore();
   chooseAnswer();
-  // random();
 });
 
 var clickCount = 0; //clicks per question should never exceed 1
 var questionCount = 0;
+var time = 0;
+var timerStart= $("#startTimer");
 var score = 0;
+var i = 0;
 var setScore = function() {
   if (clickCount < 1) {
     $(".score").html("<p>" + score + " points</p>");
@@ -34,29 +35,24 @@ var triviaPrompts = [
   ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
   ["When will the 2016 Summer Games end?",
   ["October 15th", "September 2nd", "August 21st"], "C", ["A", "B"] ],
-  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B"] ],
+  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B", ""] ],
   ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B"] ],
-  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B"] ],
-  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A"] ],
+  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B", ""] ],
+  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A", ""] ],
   ["In what year was Fannie Mae founded?", ["1935", "1938", "1941"], "B", ["A", "C"] ],
   ["The correct spelling of Tim's last name is:", ["Mayopoulos", "Myopoulous", "Mayopoulus"], "A", ["B", "C"] ],
   ["Our vision is to be America's most valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
   ["The new Fannie Mae office address will be [PLEASE ENTER NEW ADDRESS ex. 1501 L Street NW].",
-  ["True", "False"], "B", ["A"] ],
+  ["True", "False"], "B", ["A", ""] ],
 ];
-
-// adds the question string to the question div
-var addQuestion = function() {
-  console.log(questionCount);
-  $(".question").text(triviaPrompts[questionCount][0]);
+function addQAs (){
+var questionCount = Math.floor(Math.random() * triviaPrompts.length);
+$(".question").text(triviaPrompts[questionCount][0]);
+$("#A").text( triviaPrompts[questionCount][1][0] );
+$("#B").text( triviaPrompts[questionCount][1][1] );
+$("#C").text( triviaPrompts[questionCount][1][2] );
 };
 
-// adds the answer choices to 3 answer divs
-var addAnswers = function(){
-  $("#A").text( triviaPrompts[questionCount][1][0] );
-  $("#B").text( triviaPrompts[questionCount][1][1] );
-  $("#C").text( triviaPrompts[questionCount][1][2] );
-};
 
 var chooseAnswer = function(){
 
@@ -102,23 +98,15 @@ var chooseAnswer = function(){
   answerChoices();
 };
 
-//
-// function random(){
-//   var i = Math.floor(Math.random() * triviaPrompts.length)
-// }
-
-
-
 // clicking next div will progress to the next question and reset for each question, which will:
 // (1) hide the right/wrong box
 // (2) change answer choice text color back to black
 // (3) hide the next box, etc.
 var onNext = function(){
+  var random = Math.floor(Math.random() * (triviaPrompts.length));
   questionCount++;
   if ( questionCount <= (triviaPrompts.length-1)) {
-    // random();
-    addQuestion();
-    addAnswers();
+    addQAs();
     $(".right-or-wrong").hide();
     $(".next").hide();
     $(".answer").css("color", "black");
@@ -127,7 +115,6 @@ var onNext = function(){
   }
 
 // on last question, text in next div changes to "Game over!"
-// clicking the div opens spoopy video (at game over)
   if ( questionCount == (triviaPrompts.length-1 ) ) {
       $(".next").html("Game over! " + " <p class = 'fa fa-play-circle'></p>");
   } else if ( questionCount > (triviaPrompts.length-1 ) ) {
