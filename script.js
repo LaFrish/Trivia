@@ -4,7 +4,7 @@ $(document).ready(function(){
   chooseAnswer();
 });
 
-var clickCount = 0; //clicks per question should never exceed 1
+var clickCount = 0;
 var questionCount = 0;
 var time = 0;
 var timerStart= $("#startTimer");
@@ -22,6 +22,29 @@ var setScore = function() {
 //       reloading.onclick = function(){
 //         window.location.reload();
 //       };
+
+jQuery(document).ready(function($){
+	//open popup
+	$('.cd-popup-trigger').on('click', function(event){
+		event.preventDefault();
+		$('.cd-popup').addClass('is-visible');
+	});
+
+	//close popup
+	$('.cd-popup').on('click', function(event){
+		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+			event.preventDefault();
+			$(this).removeClass('is-visible');
+		}
+	});
+	//close popup when clicking the esc keyboard button
+	$(document).keyup(function(event){
+    	if(event.which=='27'){
+    		$('.cd-popup').removeClass('is-visible');
+	    }
+    });
+});
+
 
 var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
@@ -51,6 +74,7 @@ var triviaPrompts = [
   ["Our vision is to be America's most valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
   ["The new Fannie Mae office address will be [PLEASE ENTER NEW ADDRESS ex. 1501 L Street NW].",
   ["True", "False"], "B", ["A", ""] ],
+  ["Which of the following are guiding principles for Workplace Transformation?", ["Standardization", "Transparency", "Resilience", "All of the above"], "D", ["A", "B", "C", "E"] ],
 ];
 function addQAs (){
 var questionCount = Math.floor(Math.random() * triviaPrompts.length);
@@ -63,16 +87,12 @@ $("#C").text( triviaPrompts[questionCount][1][2] );
 
 var chooseAnswer = function(){
 
-  // clicking a CORRECT answer div:
-  // (1) changes the text color to white,
-  // (2) changes other answers to grey,
-  // (3) shows if right/wrong & score
   var rightAnswer = function() {
     if (clickCount < 1) {
     $(this).css("color", "white"); // (1)
       //change other answers to grey
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
-      $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey"); //(2)
+      $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
     $(".right-or-wrong").show();
     $(".right-or-wrong").text("Right!");
       score = score + 1;
@@ -82,7 +102,6 @@ var chooseAnswer = function(){
     $(".next").show();
   };
 
-  // clicking on a WRONG answer div: (1), (2), and (3) remain the same with different right-or-wrong text and different score
   var wrongAnswer = function () {
     if (clickCount < 1) {
     $(".answer").css("color", "grey"); //(2)
@@ -94,9 +113,9 @@ var chooseAnswer = function(){
     }
   };
 
-  // right/wrong changes occur when one of the answer choice divs is clicked
+
   var answerChoices = function() {
-    $(".answer").off("click"); // removes any previously bound click event listeners
+    $(".answer").off("click");
     $("#" + triviaPrompts[questionCount][2]).on("click", rightAnswer);
     $("#" + triviaPrompts[questionCount][3][0]).on("click", wrongAnswer);
     $("#" + triviaPrompts[questionCount][3][1]).on("click", wrongAnswer);
@@ -123,12 +142,12 @@ var onNext = function(){
   }
 
 //end after 3 questions
-
-
     if ( questionCount == 3 ) {
-              $(".container").hide();
-              $("#score").show();
-            }
+      $(document).ready(function () {
+      $(".container").hide();
+      $(".popup").fadein(300);
+    })
+  }
 }
 // goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
