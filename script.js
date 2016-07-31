@@ -10,18 +10,12 @@ var time = 0;
 var timerStart= $("#startTimer");
 var score = 0;
 var i = 0;
+var reloading = document.getElementById('reload');
 var setScore = function() {
   if (clickCount < 1) {
     $(".score").html("<p>" + score + " points</p>");
   }
 };
-// var reloading = document.createElement("button");
-//       reloading.textContent = "Click here to play again";
-//       reloading.setAttribute("id", "again");
-//       document.getElementById("score").appendChild(reloading);
-//       reloading.onclick = function(){
-//         window.location.reload();
-//       };
 
 jQuery(document).ready(function($){
 	//open popup
@@ -31,7 +25,7 @@ jQuery(document).ready(function($){
 	});
 
 	//close popup
-	$('.cd-popup').on('click', function(event){
+	$('.cd-buttons').on('click', function(event){
 		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
 			event.preventDefault();
 			$(this).removeClass('is-visible');
@@ -59,23 +53,40 @@ var triviaPrompts = [
   [ "Where are the opening and closing ceremonies held?", ["Joao Havelange Olympic Stadium", "Maracana Stadium", "Maracanazinho Arena"], "B", ["A", "C"] ],
   ["How many gold medals will be handed out during at the 2016 Summer Olympics?",
   ["306", "256", "400"], "A", ["B", "C"] ],
-  ["What is the motto for the 2016 Summer Olympics?",
-  ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
-  ["What is the estimated cost in U.S. dollars of the 2016 Summer Olympics?",
-  ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
-  ["When will the 2016 Summer Games end?",
-  ["October 15th", "September 2nd", "August 21st"], "C", ["A", "B"] ],
+  ["What is the motto for the 2016 Summer Olympics?", ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
+  ["What is the estimated cost in U.S. dollars of the 2016 Summer Olympics?", ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
+  ["When will the 2016 Summer Games end?", ["October 15th", "September 2nd", "August 21st"], "C", ["A", "B"] ],
   ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B", ""] ],
   ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B"] ],
-  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B", ""] ],
+  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B", " "] ],
   ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A", ""] ],
   ["In what year was Fannie Mae founded?", ["1935", "1938", "1941"], "B", ["A", "C"] ],
   ["The correct spelling of Tim's last name is:", ["Mayopoulos", "Myopoulous", "Mayopoulus"], "A", ["B", "C"] ],
   ["Our vision is to be America's most valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
-  ["The new Fannie Mae office address will be [PLEASE ENTER NEW ADDRESS ex. 1501 L Street NW].",
-  ["True", "False"], "B", ["A", ""] ],
-  ["Which of the following are guiding principles for Workplace Transformation?", ["Standardization", "Transparency", "Resilience", "All of the above"], "D", ["A", "B", "C", "E"] ],
+  ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "False"], "B", ["A", " "] ],
+  ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False"], "A", ["B", " "] ],
+  ["The Dallas area office is being built in", ["Addison", "Plano", "Farmer's Branch"], "B", ["A", "B"] ],
+  ["How many Fannie Mae employees are located in the Dallas area?", ["200", "2000", "3000"], "B", ["A", "C"] ],
+  ["The Fannie Mae Values include:", ["We rock the house", "We lead the market", "We serve your friends and family"], "B", ["A", "C"] ],
+  ["The Fannie Mae Values include:", ["We get things done and done right", "We do things right the first time", "We can count on you"], "A", ["B", "C"] ],
+  ["The Fannie Mae Values include:", ["We are stronger together", "We value our people and our communities", "We are simple, certain and dynamic"], "A", ["B", "C"] ],
+  ["Besides the CEO, there are ___ members of the Management Committee.",["10", "12", "15"], "A", ["B", "C"] ],
+  ["There are ____ Employee Resource Groups (ERGs).", ["15", "12", "10"], "C", ["A", "B"] ],
+  ["The following is an Employee Resource Group", ["Friends of Ted", "Animal Lover’s", "Christian Salt & Light"], "C", ["A", "B"] ],
+  ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True",
+  "False "], "A", ["B", " "] ],
+  ["There are ____ Change Ambassadors across the enterprise?", ["100", "80", "130"], "C", ["A", "B"] ],
+  ["What does CPM stand for?", ["Credit Per Month", "Credit Portfolio Management", "Customer Performance Management"], "B", ["A", "C"] ],
+  ["Which of the following people are MC members?", ["Jeff Haywood", "Joy Behard", "Kimberly Johnson"], "C", ["A", "B"] ],
+  ["Our CEO Tim grew up in which state?", ["Nebraska", "Pennsylvania", "New York"], "B", ["A", "C"] ],
+  ["Reasons to go to a Tech Center include:", ["Hardware issues with laptops, desktops, and docking stations", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
+  ["Useful Links on Home Site include:", ["Brand Center", "Restaurant Menu", "Beat the Heat"], "A", ["B", "C"] ],
+  ["Collaboration tools at Fannie Mae include:", ["Jawbone", "Jabber", "Jingle"], "B", ["A", "C"] ],
+  ["Projects underway at Fannie Mae include:", ["Workstation Management", "Workplace in the Cloud", "Workplace Transformation"], "C", ["A", "B"] ],
+  ["The coffee bar at the Town Center serves Peet’s Coffee.", ["True", "False"], "B", ["A", " "] ],
+  ["We are the ______ at the heart of housing.", ["Beat", "Hub", "Brain"], "A", ["B", "C"] ]
 ];
+
 function addQAs (){
 var questionCount = Math.floor(Math.random() * triviaPrompts.length);
 $(".question").text(triviaPrompts[questionCount][0]);
@@ -144,11 +155,11 @@ var onNext = function(){
 //end after 3 questions
     if ( questionCount == 3 ) {
       $(document).ready(function () {
-      $(".container").hide();
-      $(".popup").fadein(300);
+      $('.cd-popup').addClass('is-visible');
     })
+    }
   }
-}
+
 // goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
 $("html").on("keydown", function(e){
@@ -158,3 +169,13 @@ $("html").on("keydown", function(e){
     }
   }
 });
+
+function reset(){
+  $('#reset').on('click', function (){
+    var clickCount = 0;
+    var questionCount = 0;
+    var score = 0;
+    var i = 0;
+  })
+  };
+reset();
