@@ -1,6 +1,6 @@
 
 body {
-  background-color: #fff;
+  background-color:  #21509d;
   background-position: center;
   background-repeat: no-repeat;
     margin: 0 auto;
@@ -11,6 +11,9 @@ body {
 
 header{
   margin: 10px;
+  background-color: #fff;
+  margin-bottom: -100px;
+
 }
 
 h1{
@@ -28,7 +31,7 @@ p{
 #gameboard {
   width: 500px;
   height: 480px;
-  background-color: #fff;
+  background-color:  #F1C203;
   margin-left: auto;
   margin-right: auto;
   /*margin-top: 70px;*/
@@ -37,8 +40,8 @@ p{
 
 .question {
   width: 400px;
-  background-color: #F1C203;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-size: 16px;
   margin: auto;
   padding: 10px;
@@ -47,18 +50,42 @@ p{
 }
 
 #answers{
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .answer {
-  width: 400px;
-  background-color: #88BC48;
-  color: #fff;
+  width: 250px;
+  height: 250px;
+  /*border-color: gray;
+  border-width: 1px;*/
+  background-color: #fff;
   margin: auto;
   padding: 10px;
   margin-top: 3px;
   margin-bottom: 3px;
-  border-radius: 20px;
+  border-radius: 100%;
+}
+
+ #gold_medal .answer {
+   background-color: transparent;
+   color: red;
+   z-index: 2;
+}
+
+ #silver_medal .answer {
+   background-color: transparent;
+   color: red;
+z-index: 2;
+}
+
+ #bronze_medal .answer {
+   background-color: transparent;
+   color: red;
+z-index: 2;
+}
+h2{
+  color: #5794CE;
+  background-color: #88BC48;
 }
 
 .right-or-wrong {
@@ -73,7 +100,7 @@ p{
   width: 190px;
   margin: 0 auto;
   margin-bottom: 20px;
-  background-color: #5794CE;
+  background-color: ;
   color: #000;
   padding: 5px;
 
@@ -251,16 +278,16 @@ Main components
 
 -------------------------------- */
 header {
-  height: 200px;
-  line-height: 200px;
+  height: 300px;
+  line-height: 300px;
   text-align: center;
   /*background-color: #5e6e8d;
   color: #FFF;*/
 }
-header h1 {
+/*h1 {
   font-size: 20px;
   font-size: 1.25rem;
-}
+}*/
 
 .cd-popup-trigger {
   display: block;

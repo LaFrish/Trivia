@@ -1,8 +1,6 @@
-$(document).ready(function(){
-  addQAs();
-  setScore();
-  chooseAnswer();
-});
+// $(document).ready(function(){
+//
+// });
 
 var clickCount = 0;
 var questionCount = 0;
@@ -16,27 +14,41 @@ var setScore = function() {
     $(".score").html("<p>" + score + " points</p>");
   }
 };
+function reset(){
+  $('#reset').on('click', function (){
+    addQAs();
+    setScore();
+    chooseAnswer();
+  })
+  };
 
 jQuery(document).ready(function($){
 	//open popup
-	$('.cd-popup-trigger').on('click', function(event){
-		event.preventDefault();
+	$('.cd-popup-trigger').on('click', function(){
+		// event.preventDefault();
 		$('.cd-popup').addClass('is-visible');
 	});
 
 	//close popup
-	$('.cd-buttons').on('click', function(event){
-		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-			event.preventDefault();
-			$(this).removeClass('is-visible');
-		}
-	});
+	$('#reset').on('click', function(){
+  $('.cd-popup').removeClass('is-visible');
+  reset()
+})
+// })
+  //
+	// 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+	// 		event.preventDefault();
+	// 		$(this).removeClass('is-visible');
+	// 	}
+	// });
+
+
 	//close popup when clicking the esc keyboard button
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$('.cd-popup').removeClass('is-visible');
-	    }
-    });
+	// $(document).keyup(function(event){
+  //   	if(event.which=='27'){
+  //   		$('.cd-popup').removeClass('is-visible');
+	//     }
+  //   });
 });
 
 
@@ -170,12 +182,9 @@ $("html").on("keydown", function(e){
   }
 });
 
-function reset(){
-  $('#reset').on('click', function (){
-    var clickCount = 0;
-    var questionCount = 0;
-    var score = 0;
-    var i = 0;
-  })
-  };
+
+
+addQAs();
+setScore();
+chooseAnswer();
 reset();
