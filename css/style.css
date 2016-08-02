@@ -59,8 +59,6 @@ p{
 .answer {
   width: 250px;
   height: 250px;
-  /*border-color: gray;
-  border-width: 1px;*/
   background-color: #fff;
   color: red;
   margin: auto;
@@ -71,23 +69,6 @@ p{
   z-index: 100;
 }
 
- /*#gold_medal */
- /*.answer {*/
-
-   /*z-index: 5;*/
-/*}*/
-/*
- #silver_medal .answer {
-   background-color: transparent;
-   color: red;
-z-index: 2;
-}
-
- #bronze_medal .answer {
-   background-color: transparent;
-   color: red;
-z-index: 2;
-}*/
 h2{
   color: #5794CE;
   background-color: #88BC48;
