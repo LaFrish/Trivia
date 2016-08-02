@@ -11,7 +11,7 @@ var i = 0;
 var reloading = document.getElementById('reload');
 var setScore = function() {
   if (clickCount < 1) {
-    $(".score").html("<p>" + score + " points</p>");
+    $(".score").html("<p>Score:</br>" + score + " points</p>");
   }
 };
 function reset(){
@@ -112,7 +112,7 @@ var chooseAnswer = function(){
 
   var rightAnswer = function() {
     if (clickCount < 1) {
-    $(this).css("color", "white"); // (1)
+    $(this).css("color", "green"); // (1)
       //change other answers to grey
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
@@ -128,7 +128,7 @@ var chooseAnswer = function(){
   var wrongAnswer = function () {
     if (clickCount < 1) {
     $(".answer").css("color", "grey"); //(2)
-    $(this).css("color", "white"); // (1)
+    $(this).css("color", "red"); // (1)
     $(".right-or-wrong").show();
     $(".right-or-wrong").text("Nope, it was " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
     clickCount++;
