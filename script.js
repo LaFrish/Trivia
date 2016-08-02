@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
 	// 	}
 	// });
 
-  // 
+  //
 	// close popup when clicking the esc keyboard button
 	$(document).keyup(function(event){
     	if(event.which=='27'){
