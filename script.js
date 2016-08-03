@@ -177,7 +177,7 @@ var onNext = function(){
     addQAs();
     $(".right-or-wrong").hide();
     $(".next").hide();
-    $(".answer").css("color", "black");
+    $(".answer").css("color", "white");
     clickCount = 0;
     chooseAnswer();
   }
