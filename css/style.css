@@ -74,7 +74,7 @@ h2{
 }
 
 .right-or-wrong {
-  padding-top: 50px;
+  padding-top: 40px;
   vertical-align: middle;
   margin-left: 150px;
   margin-right: 150px;
@@ -86,19 +86,19 @@ h2{
   color: #21509d;
   z-index: 10;
     margin-top: -450px;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
 }
 .next {
   font-family: 'Slabo 27px', serif;
-  margin-left: 600px;
+  margin-left: 620px;
   height: 30px;
   width: 200px;
   background-color: green;
   color: #fff;
   z-index: 11;
   cursor: pointer;
-  vertical-align: middle;
+  padding-top: 5px;
   text-align: center;
   border-radius: 20px;
   margin-bottom: 100px;
