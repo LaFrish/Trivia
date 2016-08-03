@@ -113,7 +113,7 @@ var chooseAnswer = function(){
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
     $(".right-or-wrong").show();
-    $(".right-or-wrong").text("Right!");
+    $(".right-or-wrong").text("You are correct!");
       score = score + 1;
     }
     setScore();
@@ -126,7 +126,7 @@ var chooseAnswer = function(){
     $(".answer").css("color", "grey"); //(2)
     $(this).css("color", "red"); // (1)
     $(".right-or-wrong").show();
-    $(".right-or-wrong").text("Nope, it was " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+    $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
     clickCount++;
     $(".next").show();
     }
