@@ -297,7 +297,7 @@ xpopup
 }
 .cd-popup-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 4em auto;
   background: #FFF;
@@ -342,7 +342,7 @@ xpopup
 }
 .cd-popup1-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 4em auto;
   background: #FFF;
@@ -387,7 +387,7 @@ xpopup
 }
 .cd-popup2-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 4em auto;
   background: #FFF;
@@ -434,7 +434,7 @@ xpopup
 
 .cd-popup3-container {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: 4em auto;
   background: #FFF;
