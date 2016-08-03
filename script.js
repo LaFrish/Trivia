@@ -9,7 +9,7 @@ var i = 0;
 var reloading = document.getElementById('reload');
 var setScore = function() {
   if (clickCount < 1) {
-    $(".score").html("<p>Score:</br>" + score + " points</p>");
+    $(".score").html("<p>Score:" + score + "</p>");
   }
 };
 function reset(){
@@ -100,8 +100,8 @@ var triviaPrompts = [
   ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False"], "A", ["B", " "] ],
   ["The Dallas area office is being built in", ["Addison", "Plano", "Farmer's Branch"], "B", ["A", "B"] ],
   ["How many Fannie Mae employees are located in the Dallas area?", ["200", "2000", "3000"], "B", ["A", "C"] ],
-  ["The Fannie Mae Values include:", ["We rock the house", "We lead the market", "We serve your friends and family"], "B", ["A", "C"] ],
-  ["The Fannie Mae Values include:", ["We get things done and done right", "We do things right the first time", "We can count on you"], "A", ["B", "C"] ],
+  ["The Fannie Mae Values include:", ["We rock the house", "We lead the market", "We serve your friends & family"], "B", ["A", "C"] ],
+  ["The Fannie Mae Values include:", ["We get things done & done right", "We do things right the 1st time", "We can count on you"], "A", ["B", "C"] ],
   ["The Fannie Mae Values include:", ["We are stronger together", "We value our people and our communities", "We are simple, certain and dynamic"], "A", ["B", "C"] ],
   ["Besides the CEO, there are ___ members of the Management Committee.",["10", "12", "15"], "A", ["B", "C"] ],
   ["There are ____ Employee Resource Groups (ERGs).", ["15", "12", "10"], "C", ["A", "B"] ],
@@ -109,7 +109,7 @@ var triviaPrompts = [
   ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True",
   "False "], "A", ["B", " "] ],
   ["There are ____ Change Ambassadors across the enterprise?", ["100", "80", "130"], "C", ["A", "B"] ],
-  ["What does CPM stand for?", ["Credit Per Month", "Credit Portfolio Management", "Customer Performance Management"], "B", ["A", "C"] ],
+  ["What does CPM stand for?",["Credit Per Month", "Credit Portfolio Management", "Customer Performance Management"], "B", ["A", "C"] ],
   ["Which of the following people are MC members?", ["Jeff Haywood", "Joy Behard", "Kimberly Johnson"], "C", ["A", "B"] ],
   ["Our CEO Tim grew up in which state?", ["Nebraska", "Pennsylvania", "New York"], "B", ["A", "C"] ],
   ["Reasons to go to a Tech Center include:", ["Hardware issues with laptops, desktops, and docking stations", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
@@ -134,7 +134,6 @@ var chooseAnswer = function(){
   var rightAnswer = function() {
     if (clickCount < 1) {
     $(this).css("color", "green"); // (1)
-      //change other answers to grey
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
     $(".right-or-wrong").show();
@@ -156,7 +155,6 @@ var chooseAnswer = function(){
     $(".next").show();
     }
   };
-
 
   var answerChoices = function() {
     $(".answer").off("click");

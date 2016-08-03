@@ -1,34 +1,25 @@
 
 body {
   background-color:  #21509d;
-  background-position: center;
-  background-repeat: no-repeat;
-    margin: 0 auto;
   font-family: sans-serif;
   text-align: center;
-  margin-bottom: 50px;
 }
 
 header{
   margin: 10px;
   background-color: #fff;
-  margin-bottom: -50px;
+  /*margin-bottom: -50px;*/
 }
 
 h1{
-  padding-top: -200px;
-  color: pink;
+  color: #000;
   font-family: sans-serif;
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: bolder;
 }
 
 p{
-  padding-top: 20px;
   font-family: sans-serif;
-  font-size: 30px;
-  color: red;
-  line-height: 2px;
-  margin-top: 300px;
 }
 /*#letterpress {
   background: #999;
@@ -40,31 +31,18 @@ p{
 
 }*/
 
-
-#gameboard {
-  width: 500px;
-  height: 480px;
-  background-color:  #F1C203;
-  margin-left: auto;
-  margin-right: auto;
-  /*margin-top: 70px;*/
-  opacity: 0.85;
-}
-
 .question {
+  padding-top: 15px;
+  vertical-align: middle;
+  display: inline-block;
   height: 60px;
   width: 100%;
-  background-color:  #21509d;
-  color: #fff;
-  font-size: 30px;
-  /*margin-bottom: -2px;*/
-  /*border-radius: 20px;*/
+  background-color:  #F1C203;
+  color: #21509d;
+  font-size: 26px;
   z-index: 10;
-  display: inline-block;
-  /*margin: 0 auto;*/
-  margin-top: -100px;
-  padding: 5px;
-  list-style: none;
+  font-weight: bold;
+
 }
 .timer{
   background-color: #88BC48;
@@ -81,88 +59,65 @@ p{
 }
 
 .score {
-  display: inline-block;
-  width: 50%;
+  width: 30%;
   height:65px;
-  /*margin: 0 auto;*/
-  /*margin-bottom: 20px;*/
-  background-color: #F1C203;
-  color: #000;
-  padding: 5px;
+  color: #F1C203;
   z-index: 3;
-  float: left;
-  list-style: none;
+  font-size: 50px;
+  text-align: center;
+  display: inline-block;
 
-}
-
-
-span{
-margin-top: 25px;
-margin-bottom:-100px;
 }
 
 #answers{
-  /*margin-bottom: 20px;*/
+    z-index: 1;
 }
-.answers{
-margin-left: 20px;
-margin-right: 20px;
+.answer{
+margin-left: 5px;
+margin-right: 5px;
+z-index: 1;
+}
 
-}
 #A{
+  margin-left: 15px;
+  margin-right: 15px;
   display: inline-block;
-  /*width: 450px;
-  height: 695px;*/
-  width: 300px;
-  height: 300px;
-  background-image: url("silver-no.png");
-  /*color: #000;*/
-  /*margin: auto;*/
-  font-size: 24px;
-  padding-top: 100px;
+  width: 320px;
+  height:420px;
+  background-image: url("silver-shorter.png");
+  font-size: 22px;
+  padding-top: 220px;
   text-align: center;
-  /*margin-top: 3px;
-  margin-bottom: 3px;*/
+  z-index: 1;
 }
 
 
 #B{
+    margin-left: 15px;
+    margin-right: 15px;
     display: inline-block;
-    width: 300px;
-    height: 300px;
-    /*width: 450px;
-    height: 695px;*/
-  background-image: url("gold-no.png");
-  /*color: #000;*/
-  /*margin: auto;*/
-  font-size: 24px;
-  padding-top: 100px;
-  text-align: center;
-  /*margin-top: 3px;
-  margin-bottom: 3px;*/
-
-}
+    width: 320px;
+    height:420px;
+    background-image: url("gold-shorter.png");
+    font-size: 22px;
+    padding-top: 220px;
+    text-align: center;
+    z-index: 1;
+  }
 #C{
+  margin-left: 15px;
+  margin-right: 15px;
   display: inline-block;
-  width: 300px;
-  height: 300px;
-  /*width: 450px;
-  height: 695px;*/
-  background-image: url("bronze-no.png");
-  /*color: #000;*/
-  /*margin: auto;*/
-  font-size: 24px;
-  padding-top: 100px;
+  width: 320px;
+  height:420px;
+  background-image: url("bronze-shorter.png");
+  font-size: 22px;
+  padding-top: 220px;
   text-align: center;
-  /*margin-top: 3px;
-  margin-bottom: 3px;*/
-
+  z-index: 1;
 }
 
 h2{
-  /*color: #5794CE;
-  background-color: #88BC48;*/
-    z-index: 5;
     font-size: 50px;
 }
 
@@ -188,37 +143,6 @@ a{
   text-decoration: none;
 }
 
-/*.image {
-  padding: 10px;
-  margin: 0 auto;
-}*/
-
-footer{
-  color: #000;
-  font-size: 10px;
-  line-height: 3px;
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  right:0px;
-  height:50px;
-  margin-bottom:0px;
-}
-
-.popup {
-	display:none;
-	position:fixed;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	top:10.3%;
-	left:10.3%;
-	width:80%;
-	height:80%;
-	background: #fff;
-	outline:10px solid #000;
-	z-index: 15;
-}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -277,18 +201,6 @@ html * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-body {
-  font-size: 100%;
-  font-family: "Lato", sans-serif;
-  /*color: #8f9cb5;
-  background-color: #ffd88f;*/
-}
-
-/*a {
-  color: #35a785;
-  text-decoration: none;
-}*/
 
 /* --------------------------------
 
@@ -439,7 +351,7 @@ xpopup
 }
 .cd-popup-container .cd-buttons li {
   float: left;
-  width: 50%;
+  width: 100%;
   list-style: none;
 }
 .cd-popup-container .cd-buttons a {
