@@ -32,15 +32,14 @@ jQuery(document).ready(function($){
   $('.cd-popup').removeClass('is-visible');
   reset()
 })
-// })
-  //
+
 	// 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
 	// 		event.preventDefault();
 	// 		$(this).removeClass('is-visible');
-	// 	}
-	// });
+   //
+	//  };
 
-  //
+
 	// close popup when clicking the esc keyboard button
 	$(document).keyup(function(event){
     	if(event.which=='27'){
@@ -48,29 +47,6 @@ jQuery(document).ready(function($){
 	    }
     });
 });
-// function Timer(){
-// 			var gameTime=setInterval(function(){
-// 				miliseconds++;
-// 				if(miliseconds>=10){
-// 					miliseconds=0;
-// 					seconds++;
-// 				}
-// 				$("#timer").text("time left : "+(30-seconds));
-//
-// 				//console.log("seconds : "+seconds+" interv : "+interv);
-// 				if(seconds>=limit){
-// 					clearInterval(gameTime);
-//           $(".right-or-wrong").show();
-//           $(".right-or-wrong").text("Nope, it was " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
-//           clickCount++;
-//           $(".next").show();
-// 			}
-//       // 100*interv);//set interval
-// 	}//timer
-// 	$("#startagain").click(function() {
-//         resetEverything();
-//     });
-
 
 
 var triviaPrompts = [
@@ -89,15 +65,15 @@ var triviaPrompts = [
   ["What is the motto for the 2016 Summer Olympics?", ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
   ["What is the estimated cost in U.S. dollars of the 2016 Summer Olympics?", ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
   ["When will the 2016 Summer Games end?", ["October 15th", "September 2nd", "August 21st"], "C", ["A", "B"] ],
-  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B", ""] ],
-  ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B"] ],
+  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False"], "A", ["B", " "] ],
+  ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False"], "A", ["B", " "] ],
   ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False"], "A", ["B", " "] ],
-  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A", ""] ],
+  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False"], "B", ["A", " "] ],
   ["In what year was Fannie Mae founded?", ["1935", "1938", "1941"], "B", ["A", "C"] ],
   ["The correct spelling of Tim's last name is:", ["Mayopoulos", "Myopoulous", "Mayopoulus"], "A", ["B", "C"] ],
   ["Our vision is to be America's most valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
   ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "False"], "B", ["A", " "] ],
-  ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False"], "A", ["B", " "] ],
+  ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False"], "A", ["B",] ],
   ["The Dallas area office is being built in", ["Addison", "Plano", "Farmer's Branch"], "B", ["A", "B"] ],
   ["How many Fannie Mae employees are located in the Dallas area?", ["200", "2000", "3000"], "B", ["A", "C"] ],
   ["The Fannie Mae Values include:", ["We rock the house", "We lead the market", "We serve your friends & family"], "B", ["A", "C"] ],
@@ -185,7 +161,16 @@ var onNext = function(){
 //end after 3 questions
     if ( questionCount == 3 ) {
       $(document).ready(function () {
+        if (score=== 3){
+          $('.cd-popup3').addClass('is-visible');
+        } else if ( score === 2) {
+      $('.cd-popup2').addClass('is-visible');
+    } else if  (score ===1){
+      $('.cd-popup1').addClass('is-visible');
+    } else {
       $('.cd-popup').addClass('is-visible');
+    }
+
     })
     }
   }
