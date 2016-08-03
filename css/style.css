@@ -55,6 +55,7 @@ h1{
     z-index: 1;
 }
 .answer{
+  line-height: 60px;
   font-size: 50px;
   text-align: center;
     color: #fff;
@@ -66,17 +67,17 @@ h2{
 
 .right-or-wrong {
   height: 100%;
-  width: 400px;
-  background-color: red;
+  width: 100%;
+  background-color: #21509d;
   color: #fff;
   z-index: 20;
 }
 .next {
-  width: 400px;
-  background-color: red;
+  width: 100%;
+  background-color: #21509d;
   color: #fff;
   z-index: 20;
-  height: 50px;
+  height: 100%;
 }
 
 a{
