@@ -76,11 +76,12 @@ h2{
 .right-or-wrong {
   padding-top: 20px;
   vertical-align: middle;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 5%;
+  margin-right: 5%;
+
   text-align: center;
   height: 450px;
-  width: 80%;
+  width: 90%;
   font-family: 'Slabo 27px', serif;
   background-color: #fff;
   color: #21509d;
@@ -457,34 +458,127 @@ xpopup
   z-index: 05;
 }
 .cd-popup-container p {
+  font-family: 'Slabo 27px', serif;
   padding: 3em 1em;
 }
 .cd-popup-container .cd-buttons:after {
+  font-family: 'Slabo 27px', serif;
   content: "";
   display: table;
   clear: both;
 }
 .cd-popup-container .cd-buttons li {
+  font-family: 'Slabo 27px', serif;
   float: left;
   width: 100%;
   list-style: none;
 }
 .cd-popup-container .cd-buttons a {
+  font-family: 'Slabo 27px', serif;
   display: block;
   height: 60px;
   line-height: 60px;
   text-transform: uppercase;
-  color: #FFF;
+  color: #000;
   -webkit-transition: background-color 0.2s;
   -moz-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
+
+.cd-popup1-container .cd-buttons:after {
+  font-family: 'Slabo 27px', serif;
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-popup1-container .cd-buttons li {
+  font-family: 'Slabo 27px', serif;
+  width: 100%;
+  list-style: none;
+}
+.cd-popup1-container .cd-buttons a {
+  font-family: 'Slabo 27px', serif;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.cd-popup2-container .cd-buttons:after {
+  content: "";
+  font-family: 'Slabo 27px', serif;
+  display: table;
+  clear: both;
+}
+.cd-popup2-container .cd-buttons li {
+  font-family: 'Slabo 27px', serif;
+  float: left;
+  width: 100%;
+  list-style: none;
+}
+.cd-popup2-container .cd-buttons a {
+  font-family: 'Slabo 27px', serif;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.cd-popup3-container .cd-buttons:after {
+  font-family: 'Slabo 27px', serif;
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-popup3-container .cd-buttons li {
+  font-family: 'Slabo 27px', serif;
+  float: left;
+  width: 100%;
+  list-style: none;
+}
+.cd-popup3-container .cd-buttons a {
+  font-family: 'Slabo 27px', serif;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+
 .cd-popup-container .cd-buttons li:first-child a {
-  background: #fc7169;
+  font-family: 'Slabo 27px', serif;
+  background: #F1C203;
+  border-radius: 0 0 0 .25em;
+}
+.cd-popup1-container .cd-buttons li:first-child a {
+  font-family: 'Slabo 27px', serif;
+  background: #F1C203;
+  border-radius: 0 0 0 .25em;
+}
+.cd-popup2-container .cd-buttons li:first-child a {
+  font-family: 'Slabo 27px', serif;
+  background: #F1C203;
+  border-radius: 0 0 0 .25em;
+}
+.cd-popup3-container .cd-buttons li:first-child a {
+  font-family: 'Slabo 27px', serif;
+  background: #F1C203;
   border-radius: 0 0 0 .25em;
 }
 .no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
-  background-color: #fc8982;
+  background-color: #F1C203;
 }
 .cd-popup-container .cd-buttons li:last-child a {
   background: #b6bece;
