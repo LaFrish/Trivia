@@ -560,32 +560,32 @@ xpopup
 .cd-popup-container .cd-buttons li:first-child a {
   font-family: 'Slabo 27px', serif;
   background: #F1C203;
-  border-radius: 0 0 0 .25em;
+  border-bottom: .25em;
 }
 .cd-popup1-container .cd-buttons li:first-child a {
   font-family: 'Slabo 27px', serif;
   background: #F1C203;
-  border-radius: 0 0 0 .25em;
+  border-bottom: .25em;
 }
 .cd-popup2-container .cd-buttons li:first-child a {
   font-family: 'Slabo 27px', serif;
   background: #F1C203;
-  border-radius: 0 0 0 .25em;
+  border-bottom: .25em;
 }
 .cd-popup3-container .cd-buttons li:first-child a {
   font-family: 'Slabo 27px', serif;
   background: #F1C203;
-  border-radius: 0 0 0 .25em;
+  border-bottom: .25em;
 }
 .no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
   background-color: #F1C203;
 }
 .cd-popup-container .cd-buttons li:last-child a {
-  background: #b6bece;
-  border-radius: 0 0 .25em 0;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
-  background-color: #c5ccd8;
+  background-color: #F1C203;
 }
 .cd-popup-container .cd-popup-close {
   position: absolute;
