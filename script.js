@@ -4,8 +4,6 @@
 
 var clickCount = 0;
 var questionCount = 0;
-var time = 0;
-var timerStart= $("#startTimer");
 var score = 0;
 var i = 0;
 var reloading = document.getElementById('reload');
@@ -50,6 +48,29 @@ jQuery(document).ready(function($){
 	    }
     });
 });
+// function Timer(){
+// 			var gameTime=setInterval(function(){
+// 				miliseconds++;
+// 				if(miliseconds>=10){
+// 					miliseconds=0;
+// 					seconds++;
+// 				}
+// 				$("#timer").text("time left : "+(30-seconds));
+//
+// 				//console.log("seconds : "+seconds+" interv : "+interv);
+// 				if(seconds>=limit){
+// 					clearInterval(gameTime);
+//           $(".right-or-wrong").show();
+//           $(".right-or-wrong").text("Nope, it was " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+//           clickCount++;
+//           $(".next").show();
+// 			}
+//       // 100*interv);//set interval
+// 	}//timer
+// 	$("#startagain").click(function() {
+//         resetEverything();
+//     });
+
 
 
 var triviaPrompts = [
@@ -94,7 +115,7 @@ var triviaPrompts = [
   ["Reasons to go to a Tech Center include:", ["Hardware issues with laptops, desktops, and docking stations", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
   ["Useful Links on Home Site include:", ["Brand Center", "Restaurant Menu", "Beat the Heat"], "A", ["B", "C"] ],
   ["Collaboration tools at Fannie Mae include:", ["Jawbone", "Jabber", "Jingle"], "B", ["A", "C"] ],
-  ["Projects underway at Fannie Mae include:", ["Workstation Management", "Workplace in the Cloud", "Workplace Transformation"], "C", ["A", "B"] ],
+  ["Projects underway at Fannie Mae include:", ["Workstation  Management", "Workplace in the Cloud", "Workplace  Transformation"], "C", ["A", "B"] ],
   ["The coffee bar at the Town Center serves Peet’s Coffee.", ["True", "False"], "B", ["A", " "] ],
   ["We are the ______ at the heart of housing.", ["Beat", "Hub", "Brain"], "A", ["B", "C"] ]
 ];
@@ -143,7 +164,6 @@ var chooseAnswer = function(){
     $("#" + triviaPrompts[questionCount][3][0]).on("click", wrongAnswer);
     $("#" + triviaPrompts[questionCount][3][1]).on("click", wrongAnswer);
   };
-
   answerChoices();
 };
 
@@ -181,8 +201,6 @@ $("html").on("keydown", function(e){
     }
   }
 });
-
-
 
 addQAs();
 setScore();
