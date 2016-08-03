@@ -8,21 +8,19 @@
   <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
 </head>
 <body>
-  <header>
-<img src="css/rio-logo2.png" />
-<!-- <div class="score"></div> -->
-<!-- <h1> Office Olympics Trivia</h1> -->
-  </header>
-  <!-- <div id = "gameboard"> -->
-    <div class="container">
-      <div class = "score"></div>
-      <div class = "timer">Time Left:</br></div>
+  <!-- <header>
+<img src="css/rio-40.png"/>
+<h1>Trivia</h1>
+  </header> -->
+    <div class="container" id="start">
       <div class = "question"></div>
+    </br>
       <div id="answers">
         <div class= "answer span" id= "A"></div>
         <div class= "answer span" id= "B"></div>
         <div class= "answer span" id= "C"></div>
       </div>
+      <!-- <div class ="score"></div> -->
     </div>
 
   <div class="cd-popup-container">
@@ -31,21 +29,17 @@
       <div id="score again"></div>
     </div>
 </div>
-  <!-- <a href="#0" class="cd-popup-trigger">Trigger to after 3 questions answered</a> -->
 
 <div class="cd-popup" role="alert">
 	<div class="cd-popup-container">
 		<p>Changing to popup after 3 questions answered. And to be medal based off score.</p>
 		<ul class="cd-buttons">
-			<li><button id="#reset">Play Again</button></li>
-
-			<!-- <li><a href="#0">No</a></li> -->
+			<li id="reset"><a href="#start">Play Again</a></li>
 		</ul>
-		<a href="#0" class="cd-popup-close img-replace">Close</a>
-	</div> <!-- cd-popup-container -->
-</div> <!-- cd-popup -->
-    <!-- <img class ="image" src="css/rio-logo.png" /> -->
-<!-- </div> -->
+		<!-- <a href="#0" class="cd-popup-close img-replace">Close</a> -->
+	</div>
+</div>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="script.js"></script>
