@@ -189,7 +189,7 @@ var rightAnswer = function() {
 
 var onNext = function(){
   // var random = Math.floor(Math.random() * (triviaPrompts.length));
-  questionCount++;
+  clicked++;
 
   if ( questionCount <= (triviaPrompts.length-1)) {
     addQAs();
@@ -202,7 +202,7 @@ var onNext = function(){
   }
 
 //end after 3 questions
-    if ( questionCount === 3 ) {
+    if ( clicked === 4 ) {
       console.log("Score is 3");
       $(document).ready(function () {
       if (score=== 3){
