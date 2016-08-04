@@ -18,34 +18,34 @@ function reset(){
     setScore();
     chooseAnswer();
   })
-  };
+};
 
 jQuery(document).ready(function($){
-	//open popup
-	$('.cd-popup-trigger').on('click', function(){
-		// event.preventDefault();
-		$('.cd-popup').addClass('is-visible');
-	});
+  //open popup
+  $('.cd-popup-trigger').on('click', function(){
+    // event.preventDefault();
+    $('.cd-popup').addClass('is-visible');
+  });
 
-	//close popup
-	$('#reset').on('click', function(){
-  $('.cd-popup').removeClass('is-visible');
-  reset()
-})
+  //close popup
+  $('#reset').on('click', function(){
+    $('.cd-popup').removeClass('is-visible');
+    reset()
+  })
 
-	// 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-	// 		event.preventDefault();
-	// 		$(this).removeClass('is-visible');
-   //
-	//  };
+  // 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+  // 		event.preventDefault();
+  // 		$(this).removeClass('is-visible');
+  //
+  //  };
 
 
-	// close popup when clicking the esc keyboard button
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$('.cd-popup').removeClass('is-visible');
-	    }
-    });
+  // close popup when clicking the esc keyboard button
+  $(document).keyup(function(event){
+    if(event.which=='27'){
+      $('.cd-popup').removeClass('is-visible');
+    }
+  });
 });
 
 
@@ -97,11 +97,11 @@ var triviaPrompts = [
 ];
 
 function addQAs (){
-var questionCount = Math.floor(Math.random() * triviaPrompts.length);
-$(".question").text(triviaPrompts[questionCount][0]);
-$("#A").text( triviaPrompts[questionCount][1][0] );
-$("#B").text( triviaPrompts[questionCount][1][1] );
-$("#C").text( triviaPrompts[questionCount][1][2] );
+  var questionCount = Math.floor(Math.random() * triviaPrompts.length);
+  $(".question").text(triviaPrompts[questionCount][0]);
+  $("#A").text( triviaPrompts[questionCount][1][0] );
+  $("#B").text( triviaPrompts[questionCount][1][1] );
+  $("#C").text( triviaPrompts[questionCount][1][2] );
 };
 
 
@@ -109,11 +109,11 @@ var chooseAnswer = function(){
 
   var rightAnswer = function() {
     if (clickCount < 1) {
-    $(this).css("color", "green"); // (1)
+      $(this).css("color", "green"); // (1)
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
-    $(".right-or-wrong").show();
-    $(".right-or-wrong").text("You are correct!");
+      $(".right-or-wrong").show();
+      $(".right-or-wrong").text("You are correct!");
       score = score + 1;
     }
     setScore();
@@ -123,12 +123,12 @@ var chooseAnswer = function(){
 
   var wrongAnswer = function () {
     if (clickCount < 1) {
-    $(".answer").css("color", "grey"); //(2)
-    $(this).css("color", "red"); // (1)
-    $(".right-or-wrong").show();
-    $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
-    clickCount++;
-    $(".next").show();
+      $(".answer").css("color", "grey");
+      $(this).css("color", "red");
+      $(".right-or-wrong").show();
+      $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+      clickCount++;
+      $(".next").show();
     }
   };
 
@@ -141,10 +141,6 @@ var chooseAnswer = function(){
   answerChoices();
 };
 
-// clicking next div will progress to the next question and reset for each question, which will:
-// (1) hide the right/wrong box
-// (2) change answer choice text color back to black
-// (3) hide the next box, etc.
 
 var onNext = function(){
   var random = Math.floor(Math.random() * (triviaPrompts.length));
@@ -158,24 +154,21 @@ var onNext = function(){
     chooseAnswer();
   }
 
-//end after 3 questions
-    if ( questionCount == 3 ) {
-      $(document).ready(function () {
-        if (score=== 3){
-          $('.cd-popup3').addClass('is-visible');
-        } else if ( score === 2) {
-      $('.cd-popup2').addClass('is-visible');
-    } else if  (score ===1){
-      $('.cd-popup1').addClass('is-visible');
-    } else {
-      $('.cd-popup').addClass('is-visible');
-    }
-
+  if ( questionCount == 3 ) {
+    $(document).ready(function () {
+      if (score=== 3){
+        $('.cd-popup3').addClass('is-visible');
+      } else if ( score === 2) {
+        $('.cd-popup2').addClass('is-visible');
+      } else if  (score ===1){
+        $('.cd-popup1').addClass('is-visible');
+      } else {
+        $('.cd-popup').addClass('is-visible');
+      }
     })
-    }
   }
+}
 
-// goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
 $("html").on("keydown", function(e){
   if ($(".next").css("display") !== "none"){
