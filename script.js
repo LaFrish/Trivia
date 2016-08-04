@@ -98,7 +98,7 @@ var triviaPrompts = [
 
   ["Besides the CEO, there are ___ members of the Management Committee.",["10", "12", "15"], "A", ["B", "C"] ],
 
-  ["There are ____ Employee Resource Groups (ERGs).", ["15", "12", "10"], "C", ["A", "B"] ],
+  ["There are ____ Employee Resource Groups.", ["15", "12", "10"], "C", ["A", "B"] ],
 
   ["The following is an Employee Resource Group", ["Friends of Ted", "Animal Lovers", "Christian Salt & Light"], "C", ["A", "B"] ],
 
@@ -110,7 +110,7 @@ var triviaPrompts = [
 
   ["Our CEO Tim grew up in which state?", ["Nebraska", "Pennsylvania", "New York"], "B", ["A", "C"] ],
 
-  ["Reasons to go to a Tech Center include:", ["Hardware issues with laptops, desktops, and docking stations", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
+  ["Reasons to go to a Tech Center include:", ["Hardware issues", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
 
   ["Useful Links on HomeSite include:", ["Brand Center", "Restaurant Menu", "Beat the Heat"], "A", ["B", "C"] ],
 
@@ -128,14 +128,14 @@ var triviaPrompts = [
 
   ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False", " "], "B", ["A", "C"] ],
 
-  ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "False", " "], "B", ["A", "C"] ],
+  ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "False", " "], "A", ["B", "C"] ],
 
   ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False", " "], "A", ["B", "C"] ],
 
   ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True",
   "False", " "], "A", ["B", "C"] ],
 
-  ["The coffee bar at the Town Center serves Peet’s Coffee.", ["True", "False", " "], "B", ["A", "C"] ]
+  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "False", " "], "B", ["A", "C"] ]
 ];
 
 

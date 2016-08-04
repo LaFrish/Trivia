@@ -20,7 +20,9 @@ h1{
   font-size: 40px;
   font-weight: bolder;
 }
-
+/*wrapper{
+  margin: auto;
+}*/
 .question {
   font-family: 'Slabo 27px', serif;
   padding-top: 15px;
@@ -33,19 +35,33 @@ h1{
   font-weight: bold;
   z-index: 1;
 }
-/*#answer{
-  text-align: left;
+
+#answers{
+  text-align: center;
+  display: inline-block;
+  list-style-type: none;
+}
+/*
+#answers ul{
+    text-align: left;
+    display: inline-block;
+    list-style-type: none;
 }*/
+
 .answer{
   text-align: center;
   font-family: 'Slabo 27px', serif;
   line-height: 60px;
   font-size: 50px;
-  text-align: justify;
   color: #fff;
   cursor: pointer;
   z-index: -1;
+  text-align: left;
+
 }
+/*span{
+  text-align: center;
+}*/
 .score {
   font-family: 'Slabo 27px', serif;
   width: 30%;
@@ -67,7 +83,6 @@ h2{
   vertical-align: middle;
   margin-left: 5%;
   margin-right: 5%;
-
   text-align: center;
   height: 450px;
   width: 90%;
@@ -81,7 +96,7 @@ h2{
 }
 .next {
   font-family: 'Slabo 27px', serif;
-  margin-left: 620px;
+  /*margin-left: 620px;*/
   height: 30px;
   width: 200px;
   background-color: green;
@@ -92,6 +107,8 @@ h2{
   text-align: center;
   border-radius: 20px;
   margin-bottom: 100px;
+  display: inline-block;
+  font-weight: bold;
 }
 
 a{
