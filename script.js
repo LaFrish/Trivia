@@ -5,7 +5,7 @@ var i = 0;
 var reloading = document.getElementById('reload');
 var setScore = function() {
   if (clickCount < 1) {
-    $(".score").html("<p>Score:" + score + "</p>");
+    $(".score").html("<p>Score: " + score + "</p>");
   }
 };
 
