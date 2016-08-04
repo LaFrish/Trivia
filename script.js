@@ -53,7 +53,7 @@ i = 0;
 var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
 
-  [ "Which events are included for the first time in decades?", ["Golf & Cycling-BMX", "Rugby & Golf", "Rugby & Cricket"], "B", ["A", "C"] ],
+  [ "Which events are included or the first time in decades?", ["Golf & Cycling-BMX", "Rugby & Golf", "Rugby & Cricket"], "B", ["A", "C"] ],
 
   [ "What is lit with a flame during the opening ceremony?", ["The Olympic Cauldron", "The Olympic Mascot", "The Olympic Torch"], "C", ["A", "B"] ],
 
@@ -140,10 +140,10 @@ var triviaPrompts = [
 
 function addQAs (){
 questionCount = Math.floor(Math.random() * triviaPrompts.length);
-$(".question").text(triviaPrompts[questionCount][0]);
-$("#A").text( triviaPrompts[questionCount][1][0] );
-$("#B").text( triviaPrompts[questionCount][1][1] );
-$("#C").text( triviaPrompts[questionCount][1][2] );
+$(".question").html(triviaPrompts[questionCount][0]);
+$("#A").html( triviaPrompts[questionCount][1][0] );
+$("#B").html( triviaPrompts[questionCount][1][1] );
+$("#C").html( triviaPrompts[questionCount][1][2] );
 };
 
 
@@ -155,7 +155,7 @@ var rightAnswer = function() {
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
       $(".right-or-wrong").show();
-      $(".right-or-wrong").text("You are correct!");
+      $(".right-or-wrong").html("You are correct!");
       score = score + 1;
     }
     setScore();
@@ -168,7 +168,7 @@ var rightAnswer = function() {
     $(".answer").css("color", "grey"); //(2)
     $(this).css("color", "red"); // (1)
     $(".right-or-wrong").show();
-    $(".right-or-wrong").text("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+    $(".right-or-wrong").html("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
     clickCount++;
     $(".next").show();
     }
@@ -185,7 +185,7 @@ var rightAnswer = function() {
 
 // clicking next div will progress to the next question and reset for each question, which will:
 // (1) hide the right/wrong box
-// (2) change answer choice text color back to black
+// (2) change answer choice html color back to black
 // (3) hide the next box, etc.
 
 var onNext = function(){
