@@ -33,9 +33,11 @@ h1{
   font-weight: bold;
   z-index: 1;
 }
-
+/*#answer{
+  text-align: left;
+}*/
 .answer{
-  padding-left: 625px;
+  text-align: center;
   font-family: 'Slabo 27px', serif;
   line-height: 60px;
   font-size: 50px;

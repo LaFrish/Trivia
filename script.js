@@ -100,7 +100,7 @@ var triviaPrompts = [
 
   ["There are ____ Employee Resource Groups (ERGs).", ["15", "12", "10"], "C", ["A", "B"] ],
 
-  ["The following is an Employee Resource Group", ["Friends of Ted", "Animal Lover’s", "Christian Salt & Light"], "C", ["A", "B"] ],
+  ["The following is an Employee Resource Group", ["Friends of Ted", "Animal Lovers", "Christian Salt & Light"], "C", ["A", "B"] ],
 
   ["There are ____ Change Ambassadors across the enterprise?", ["100", "80", "130"], "C", ["A", "B"] ],
 
@@ -112,7 +112,7 @@ var triviaPrompts = [
 
   ["Reasons to go to a Tech Center include:", ["Hardware issues with laptops, desktops, and docking stations", "Researching accessories", "Mobile device applications"], "A", ["B", "C"] ],
 
-  ["Useful Links on Home Site include:", ["Brand Center", "Restaurant Menu", "Beat the Heat"], "A", ["B", "C"] ],
+  ["Useful Links on HomeSite include:", ["Brand Center", "Restaurant Menu", "Beat the Heat"], "A", ["B", "C"] ],
 
   ["Collaboration tools at Fannie Mae include:", ["Jawbone", "Jabber", "Jingle"], "B", ["A", "C"] ],
 
@@ -169,7 +169,7 @@ var rightAnswer = function() {
     $(".answer").css("color", "grey"); //(2)
     $(this).css("color", "red"); // (1)
     $(".right-or-wrong").show();
-    $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+    $(".right-or-wrong").text("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
     clickCount++;
     $(".next").show();
     }
