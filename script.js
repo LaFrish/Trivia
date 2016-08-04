@@ -120,22 +120,21 @@ var triviaPrompts = [
 
   ["We are the ______ at the heart of housing.", ["Beat", "Hub", "Brain"], "A", ["B", "C"] ],
 
-  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "False", " "], "A", ["B", "C"] ],
+  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "False", " "], "A", ["B", "C"] ],
+  ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "False", " "], "A", ["B", "C"] ],
+  ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "False", " "], "B", ["A", "C"] ],
+  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "--or--", "False" ], "B", ["A", "C"] ],
 
-  ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "False", " "], "A", ["B", "C"] ],
+  ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "False", " "], "A", ["B", "C"] ],
+  ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True",
-  "False", " "], "A", ["B", "C"] ],
+  ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "False", " "], "B", ["A", "C"] ]
+  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "--or--", "False" ], "B", ["A", "C"] ]
 ];
 
 
