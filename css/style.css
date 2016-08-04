@@ -5,7 +5,10 @@ body {
   text-align: center;
   font-family: 'Slabo 27px', serif;
 }
-
+.logo {
+  background-color: #fff;
+  
+}
 header{
   margin: 10px;
   background-color: #fff;

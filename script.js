@@ -103,7 +103,7 @@ var chooseAnswer = function(){
     $(".answer").css("color", "grey"); //(2)
     $(this).css("color", "red"); // (1)
     $(".right-or-wrong").show();
-    $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+    $(".right-or-wrong").text("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
     clickCount++;
     $(".next").show();
     }
@@ -165,4 +165,4 @@ $("html").on("keydown", function(e){
 addQAs();
 setScore();
 chooseAnswer();
-reset();
+// reset();
