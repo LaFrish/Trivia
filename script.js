@@ -2,7 +2,7 @@ var clickCount = 0;
 var questionCount = 0;
 var score = 0;
 var i = 0;
-var reloading = document.getElementById('reload');
+var clicked = 0;
 var setScore = function() {
   if (clickCount < 1) {
     $(".score").html("<p>Score: " + score + "</p>");
@@ -13,15 +13,19 @@ var setScore = function() {
 jQuery(document).ready(function($){
     $('body').on('click', '#reset',function (){
         clickCount = 0;
-questionCount = 0;
-score = 0;
-i = 0;
+        questionCount = 0;
+        score = 0;
+        i = 0;
      $('.is-visible').removeClass('is-visible');
     addQAs();
     setScore();
     chooseAnswer();
-
   });
+
+  $(document).ready(function(){
+      $('.next').on('click');
+      clicked++;
+    });
 
 	//open popup
 	$('.cd-popup-trigger').on('click', function(){
@@ -134,7 +138,7 @@ var triviaPrompts = [
 
   ["The following are Employee <br /> Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "--or--", "False" ], "B", ["A", "C"] ]
+  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "--or--", "False" ], "C", ["A", "B"] ]
 ];
 
 
@@ -165,8 +169,8 @@ var rightAnswer = function() {
 
   var wrongAnswer = function () {
     if (clickCount < 1) {
-    $(".answer").css("color", "grey"); //(2)
-    $(this).css("color", "red"); // (1)
+    $(".answer").css("color", "grey");
+    $(this).css("color", "red");
     $(".right-or-wrong").show();
     $(".right-or-wrong").html("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
     clickCount++;
@@ -183,29 +187,27 @@ var rightAnswer = function() {
   answerChoices();
 };
 
-// clicking next div will progress to the next question and reset for each question, which will:
-// (1) hide the right/wrong box
-// (2) change answer choice html color back to black
-// (3) hide the next box, etc.
-
 var onNext = function(){
   // var random = Math.floor(Math.random() * (triviaPrompts.length));
   questionCount++;
+
   if ( questionCount <= (triviaPrompts.length-1)) {
     addQAs();
     $(".right-or-wrong").hide();
     $(".next").hide();
     $(".answer").css("color", "white");
+    console.log("questionCount++;")
     clickCount = 0;
     chooseAnswer();
   }
 
 //end after 3 questions
-    if (questionCount === 3 ) {
+    if ( questionCount === 3 ) {
+      console.log("Score is 3");
       $(document).ready(function () {
-        if (score=== 3){
-          $('.cd-popup3').addClass('is-visible');
-        } else if ( score === 2) {
+      if (score=== 3){
+        $('.cd-popup3').addClass('is-visible');
+      } else if ( score === 2) {
       $('.cd-popup2').addClass('is-visible');
     } else if  (score ===1){
       $('.cd-popup1').addClass('is-visible');
