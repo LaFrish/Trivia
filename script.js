@@ -12,6 +12,7 @@ var setScore = function() {
 
 jQuery(document).ready(function($){
     $('body').on('click', '#reset',function (){
+      clicked = 0;
         clickCount = 0;
         questionCount = 0;
         score = 0;
