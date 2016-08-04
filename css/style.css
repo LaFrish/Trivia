@@ -419,6 +419,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -442,6 +444,8 @@ xpopup
   font-family: 'Slabo 27px', serif;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup1-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -466,6 +470,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup2-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -490,6 +496,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup3-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
