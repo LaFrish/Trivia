@@ -6,6 +6,8 @@ body {
   font-family: 'Slabo 27px', serif;
 }
 .logo {
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #fff;
 
 }
