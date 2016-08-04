@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Slabo+27px);
 body {
+  /*background: ("css/background.png");*/
   background-color:  #21509d;
   text-align: center;
   font-family: 'Slabo 27px', serif;
@@ -244,6 +245,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -289,6 +292,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup1-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -334,6 +339,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup2-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -381,6 +388,8 @@ xpopup
 
 
 .cd-popup3-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -406,6 +415,7 @@ xpopup
 }
 .cd-popup-container p {
   font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   padding: 3em 1em;
 }
 .cd-popup-container .cd-buttons:after {
@@ -419,6 +429,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -442,6 +454,8 @@ xpopup
   font-family: 'Slabo 27px', serif;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup1-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -466,6 +480,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup2-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
@@ -490,6 +506,8 @@ xpopup
   float: left;
   width: 100%;
   list-style: none;
+  background: #F1C203;
+  border-bottom: .25em;
 }
 .cd-popup3-container .cd-buttons a {
   font-family: 'Slabo 27px', serif;
