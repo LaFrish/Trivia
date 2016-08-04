@@ -53,17 +53,17 @@ i = 0;
 var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
 
-  [ "Which events are included or the first time in decades?", ["Golf & Cycling-BMX", "Rugby & Golf", "Rugby & Cricket"], "B", ["A", "C"] ],
+  [ "Which events are included for the <br /> first time in decades?", ["Golf & Cycling-BMX", "Rugby & Golf", "Rugby & Cricket"], "B", ["A", "C"] ],
 
-  [ "What is lit with a flame during the opening ceremony?", ["The Olympic Cauldron", "The Olympic Mascot", "The Olympic Torch"], "C", ["A", "B"] ],
+  [ "What is lit with a flame during <br /> the opening ceremony?", ["The Olympic Cauldron", "The Olympic Mascot", "The Olympic Torch"], "C", ["A", "B"] ],
 
-  [ "The torch relay began on April 21st in which city?", ["Olympia", "Rio de Janeiro", "London"], "A", ["B", "C"] ],
+  [ "The torch relay began on April 21st <br /> in which city?", ["Olympia", "Rio de Janeiro", "London"], "A", ["B", "C"] ],
 
   [ "Organizers prepare approximately how many meals per day to feed athletes?", ["5,000", "60,000", "30,000"], "B", ["A", "C"] ],
 
-  [ "Which is one of the venues for the Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
+  [ "Which is one of the venues for <br /> the Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
 
-  [ "The first refugee team to ever compete at the Olympic Games competes under which flag?", ["Olympic", "Greece", "Brazil"], "A", ["B", "C"] ],
+  ["Which flag represents the first refugee team to ever compete in the Olympics?", ["Olympic", "Greece", "Brazil"], "A", ["B", "C"] ],
 
   [ "Which two types of martial arts are represented in the Summer Olympics?", ["Kung Fu & Tai Chi Chuan", "Karate & Ninjitsu", "Taekwondo & Judo"], "C", ["A", "B"] ],
 
@@ -74,7 +74,7 @@ var triviaPrompts = [
   ["How many gold medals will be handed out during at the 2016 Summer Olympics?",
   ["306", "256", "400"], "A", ["B", "C"] ],
 
-  ["What is the motto for the 2016 Summer Olympics?", ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
+  ["What is the motto for the 2016 <br /> Summer Olympics?", ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
 
   ["What is the estimated cost in U.S. dollars of the 2016 Summer Olympics?", ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
 
@@ -100,9 +100,9 @@ var triviaPrompts = [
 
   ["There are ____ Employee Resource Groups.", ["15", "12", "10"], "C", ["A", "B"] ],
 
-  ["The following is an Employee Resource Group", ["Friends of Ted", "Animal Lovers", "Christian Salt & Light"], "C", ["A", "B"] ],
+  ["The following is an Employee <br /> Resource Group", ["Friends of Ted", "Animal Lovers", "Christian Salt & Light"], "C", ["A", "B"] ],
 
-  ["There are ____ Change Ambassadors across the enterprise?", ["100", "80", "130"], "C", ["A", "B"] ],
+  ["There are ____ Change Ambassadors <br /> across the enterprise?", ["100", "80", "130"], "C", ["A", "B"] ],
 
   ["What does CPM stand for?",["Credit Per Month", "Credit Portfolio Management", "Customer Performance Management"], "B", ["A", "C"] ],
 
@@ -126,13 +126,13 @@ var triviaPrompts = [
 
   ["The official mascots of the 2016 Summer Olympics are Vinicius and Tom?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["There will be less than 10,000 athletes participating in the 2016 Summer Olympics?", ["True", "--or--", "False" ], "B", ["A", "C"] ],
+  ["There will be less than 10,000 <br /> athletes participating in the 2016 <br /> Summer Olympics?", ["True", "--or--", "False" ], "C", ["A", "C"] ],
 
   ["The new Fannie Mae DC office address will be 1100 15th Street NW.", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
   ["Standardization, Transparency and Resilience are guiding principles for Workplace Transformation?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The following are Employee Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True", "--or--", "False" ], "A", ["B", "C"] ],
+  ["The following are Employee <br /> Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
   ["The Coffee Bistro serves Peet’s Coffee.", ["True", "--or--", "False" ], "B", ["A", "C"] ]
 ];
