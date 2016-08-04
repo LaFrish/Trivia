@@ -81,7 +81,7 @@ h2{
 }
 
 .right-or-wrong {
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   vertical-align: middle;
   margin-left: 5%;
   margin-right: 5%;
@@ -92,7 +92,7 @@ h2{
   background-color: #fff;
   color: #21509d;
   z-index: 10;
-    margin-top: -450px;
+    margin-top: -470px;
     font-size: 40px;
     font-weight: bold;
 }
