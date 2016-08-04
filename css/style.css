@@ -244,6 +244,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -289,6 +291,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup1-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -334,6 +338,8 @@ xpopup
   transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 .cd-popup2-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -381,6 +387,8 @@ xpopup
 
 
 .cd-popup3-container {
+  font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   position: relative;
   width: 100%;
   max-width: 400px;
@@ -406,6 +414,7 @@ xpopup
 }
 .cd-popup-container p {
   font-family: 'Slabo 27px', serif;
+  font-size: 27px;
   padding: 3em 1em;
 }
 .cd-popup-container .cd-buttons:after {

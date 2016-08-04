@@ -150,13 +150,13 @@ $("#C").text( triviaPrompts[questionCount][1][2] );
 
 var chooseAnswer = function(){
 
-  var rightAnswer = function() {
+var rightAnswer = function() {
     if (clickCount < 1) {
-    $(this).css("color", "green"); // (1)
+      $("#" + triviaPrompts[questionCount][2]).css("color", "green"); // replace this code
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
-    $(".right-or-wrong").show();
-    $(".right-or-wrong").text("You are correct!");
+      $(".right-or-wrong").show();
+      $(".right-or-wrong").text("You are correct!");
       score = score + 1;
     }
     setScore();
