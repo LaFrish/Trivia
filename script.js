@@ -61,7 +61,7 @@ var triviaPrompts = [
 
   [ "Organizers prepare approximately how many meals per day to feed athletes?", ["5,000", "60,000", "30,000"], "B", ["A", "C"] ],
 
-  [ "Which is one of the venues for <br /> the Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
+  [ "Which is one of the venues for the <br /> Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
 
   ["Which flag represents the first refugee team to ever compete in the Olympics?", ["Olympic", "Greece", "Brazil"], "A", ["B", "C"] ],
 
@@ -84,7 +84,7 @@ var triviaPrompts = [
 
   ["The correct spelling of Tim's last name is:", ["Mayopoulos", "Myopoulous", "Mayopoulus"], "A", ["B", "C"] ],
 
-  ["Our vision is to be America's most valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
+  ["Our vision is to be America's most <br /> valued _________ partner", ["Lending", "Mortgage", "Housing"], "C", ["A", "B"] ],
 
   ["The Dallas area office is being built in", ["Addison", "Plano", "Farmer's Branch"], "B", ["A", "C"] ],
 
@@ -106,7 +106,7 @@ var triviaPrompts = [
 
   ["What does CPM stand for?",["Credit Per Month", "Credit Portfolio Management", "Customer Performance Management"], "B", ["A", "C"] ],
 
-  ["Which of the following people are MC members?", ["Jeff Haywood", "Joy Behard", "Kimberly Johnson"], "C", ["A", "B"] ],
+  ["Which of the following people <br /> are  MC members?", ["Jeff Haywood", "Joy Behard", "Kimberly Johnson"], "C", ["A", "B"] ],
 
   ["Our CEO Tim grew up in which state?", ["Nebraska", "Pennsylvania", "New York"], "B", ["A", "C"] ],
 
@@ -120,7 +120,7 @@ var triviaPrompts = [
 
   ["We are the ______ at the heart of housing.", ["Beat", "Hub", "Brain"], "A", ["B", "C"] ],
 
-  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 Organizing Committee?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
+  ["Rio's taxi drivers, or 'taxistas', were given the chance to sign up for free online English lessons provided by the Rio 2016 <br /> Organizing Committee?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
   ["There will be a total of 28 sports in the 2016 Summer Olympics?", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
