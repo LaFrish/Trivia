@@ -1,9 +1,3 @@
-$(document).ready(function(){
-  addQAs();
-  setScore();
-  chooseAnswer();
-})
-
 var clickCount = 0;
 var questionCount = 0;
 var score = 0;
@@ -14,45 +8,47 @@ var setScore = function() {
     $(".score").html("<p>Score:" + score + "</p>");
   }
 };
-function reset(){
-  $('#reset').on('click', function (){
-    clickCount = 0;
-    questionCount = 0;
-    score = 0;
-    i = 0;
 
+
+jQuery(document).ready(function($){
+    $('body').on('click', '#reset',function (){
+        clickCount = 0;
+questionCount = 0;
+score = 0;
+i = 0;
+     $('.is-visible').removeClass('is-visible');
     addQAs();
     setScore();
     chooseAnswer();
-  })
-};
 
-jQuery(document).ready(function($){
-  $('.cd-popup-trigger').on('click', function(){
-    $('.cd-popup').addClass('is-visible');
   });
 
-  //close popup
-  $('#reset').on('click', function(){
-    $('.cd-popup').removeClass('is-visible');
-    restartGame();
-  })
+	//open popup
+	$('.cd-popup-trigger').on('click', function(){
+		// event.preventDefault();
+		$('.cd-popup').addClass('is-visible');
+	});
 
-  // 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-  // 		event.preventDefault();
-  // 		$(this).removeClass('is-visible');
-  //
-  //  };
+	//close popup
+	$('#reset').on('click', function(){
+  $('.cd-popup').removeClass('is-visible');
+  reset()
+})
+
+	// 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+	// 		event.preventDefault();
+	// 		$(this).removeClass('is-visible');
+   //
+	//  };
 
 
-  // close popup when clicking the esc keyboard button
-  $(document).keyup(function(event){
-    if(event.which=='27'){
-      $('.cd-popup').removeClass('is-visible');
-    }
-  });
+	// close popup when clicking the esc keyboard button
+	$(document).keyup(function(event){
+    	if(event.which=='27'){
+    		$('.cd-popup').removeClass('is-visible');
+	    }
+    });
 });
-
 
 var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
@@ -141,33 +137,26 @@ var triviaPrompts = [
 
   ["The coffee bar at the Town Center serves Peet’s Coffee.", ["True", "False", " "], "B", ["A", "C"] ]
 ];
-// Shuffle(triviaPrompts);
+
 
 function addQAs (){
-  var questionCount = Math.floor(Math.random() * triviaPrompts.length);
-  $(".question").text(triviaPrompts[questionCount][0]);
-  $("#A").text( triviaPrompts[questionCount][1][0] );
-  $("#B").text( triviaPrompts[questionCount][1][1] );
-  $("#C").text( triviaPrompts[questionCount][1][2] );
+var questionCount = Math.floor(Math.random() * triviaPrompts.length);
+$(".question").text(triviaPrompts[questionCount][0]);
+$("#A").text( triviaPrompts[questionCount][1][0] );
+$("#B").text( triviaPrompts[questionCount][1][1] );
+$("#C").text( triviaPrompts[questionCount][1][2] );
 };
 
-
-// jQuery to dump out new values to element with ID of 'dump'
-// $(function() {
-//    for (var i=0;i<triviaPrompts.length;i++) {
-//       $("#dump").append(triviaPrompts[i]);
-//    }
-// });
 
 var chooseAnswer = function(){
 
   var rightAnswer = function() {
     if (clickCount < 1) {
-      $(this).css("color", "green"); // (1)
+    $(this).css("color", "green"); // (1)
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
-      $(".right-or-wrong").show();
-      $(".right-or-wrong").text("You are correct!");
+    $(".right-or-wrong").show();
+    $(".right-or-wrong").text("You are correct!");
       score = score + 1;
     }
     setScore();
@@ -177,12 +166,12 @@ var chooseAnswer = function(){
 
   var wrongAnswer = function () {
     if (clickCount < 1) {
-      $(".answer").css("color", "grey");
-      $(this).css("color", "red");
-      $(".right-or-wrong").show();
-      $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
-      clickCount++;
-      $(".next").show();
+    $(".answer").css("color", "grey"); //(2)
+    $(this).css("color", "red"); // (1)
+    $(".right-or-wrong").show();
+    $(".right-or-wrong").text("That is wrong! The correct Answer is " +  $("#" + triviaPrompts[questionCount][2]).text() + ".");
+    clickCount++;
+    $(".next").show();
     }
   };
 
@@ -195,8 +184,13 @@ var chooseAnswer = function(){
   answerChoices();
 };
 
+// clicking next div will progress to the next question and reset for each question, which will:
+// (1) hide the right/wrong box
+// (2) change answer choice text color back to black
+// (3) hide the next box, etc.
 
 var onNext = function(){
+  var random = Math.floor(Math.random() * (triviaPrompts.length));
   questionCount++;
   if ( questionCount <= (triviaPrompts.length-1)) {
     addQAs();
@@ -207,21 +201,24 @@ var onNext = function(){
     chooseAnswer();
   }
 
-  if (questionCount == 3 ) {
-    $(document).ready(function () {
-      if (score=== 3){
-        $('.cd-popup3').addClass('is-visible');
-      } else if ( score === 2) {
-        $('.cd-popup2').addClass('is-visible');
-      } else if  (score ===1){
-        $('.cd-popup1').addClass('is-visible');
-      } else {
-        $('.cd-popup').addClass('is-visible');
-      }
-    })
-  }
-}
+//end after 3 questions
+    if ( questionCount == 3 ) {
+      $(document).ready(function () {
+        if (score=== 3){
+          $('.cd-popup3').addClass('is-visible');
+        } else if ( score === 2) {
+      $('.cd-popup2').addClass('is-visible');
+    } else if  (score ===1){
+      $('.cd-popup1').addClass('is-visible');
+    } else {
+      $('.cd-popup').addClass('is-visible');
+    }
 
+    })
+    }
+  }
+
+// goes to next question on click AND on keydown - enter key
 $(".next").on("click", onNext);
 $("html").on("keydown", function(e){
   if ($(".next").css("display") !== "none"){
@@ -230,7 +227,6 @@ $("html").on("keydown", function(e){
     }
   }
 });
-
 
 addQAs();
 setScore();
