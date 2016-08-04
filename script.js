@@ -25,7 +25,6 @@ jQuery(document).ready(function($){
 
   $(document).ready(function(){
       $('.next').on('click');
-      clicked++;
     });
 
 	//open popup
@@ -203,7 +202,7 @@ var onNext = function(){
   }
 
 //end after 3 questions
-    if ( clicked === 4 ) {
+    if ( clicked === 3 ) {
       console.log("Score is 3");
       $(document).ready(function () {
       if (score=== 3){
