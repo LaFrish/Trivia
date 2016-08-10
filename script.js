@@ -9,6 +9,8 @@ var setScore = function() {
   }
 };
 
+var asked = [];
+var enabled = [];
 
 jQuery(document).ready(function($){
     $('body').on('click', '#reset',function (){
@@ -17,6 +19,7 @@ jQuery(document).ready(function($){
         questionCount = 0;
         score = 0;
         i = 0;
+        asked = [];
      $('.is-visible').removeClass('is-visible');
     addQAs();
     setScore();
@@ -65,7 +68,7 @@ var triviaPrompts = [
 
   [ "Organizers prepare approximately how many meals per day to feed athletes?", ["5,000", "60,000", "30,000"], "B", ["A", "C"] ],
 
-  [ "Which is one of the venues for the <br /> Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
+  [ "Which is one of the sports venues for the <br /> Rio Olympics?", ["The Olympic Golf Course", "The Olympic Village", "The Olympic Parade"], "A", ["B", "C"] ],
 
   ["Which flag represents the first refugee team to ever compete in the Olympics?", ["Olympic", "Greece", "Brazil"], "A", ["B", "C"] ],
 
@@ -78,7 +81,7 @@ var triviaPrompts = [
   ["How many gold medals will be handed out during at the 2016 Summer Olympics?",
   ["306", "256", "400"], "A", ["B", "C"] ],
 
-  ["What is the motto for the 2016 <br /> Summer Olympics?", ["One World. One Dream.", "Light the Fire Within", "Live your passion"], "C", ["A", "B"] ],
+  ["What is the motto for the 2016 <br /> Summer Olympics?", ["ONE WORLD. ONE DREAM", "LIGHT THE FIRE WITHIN", "LIVE YOUR PASSION"], "C", ["A", "B"] ],
 
   ["What is the estimated cost in U.S. dollars of the 2016 Summer Olympics?", ["$6.25 billion", "$11.25 billion", "$22.25 billion"], "B", ["A", "C"] ],
 
@@ -98,7 +101,7 @@ var triviaPrompts = [
 
   ["The Fannie Mae Values include:", ["We get things done & done right", "We do things right the 1st time", "We can count on you"], "A", ["B", "C"] ],
 
-  ["The Fannie Mae Values include:", ["We are stronger together", "We value our people and our communities", "We are simple, certain and dynamic"], "A", ["B", "C"] ],
+  ["The Fannie Mae Values include:", ["We are stronger together", "We value our people and our communities", "We are simple, certain and dynamic"], "B", ["A", "C"] ],
 
   ["Besides the CEO, there are ___ members of the Management Committee.",["10", "12", "15"], "A", ["B", "C"] ],
 
@@ -138,8 +141,9 @@ var triviaPrompts = [
 
   ["The following are Employee <br /> Resource Groups: Young Professionals, Asian, Live Openly and POP", ["True", "--or--", "False" ], "A", ["B", "C"] ],
 
-  ["The Coffee Bistro serves Peet’s Coffee.", ["True", "--or--", "False" ], "C", ["A", "B"] ]
+  ["The Coffee Bistro serves Intelligentsia coffee.", ["True", "--or--", "False" ], "A", ["B", "C"] ]
 ];
+
 
 
 function addQAs (){
@@ -188,7 +192,6 @@ var rightAnswer = function() {
 };
 
 var onNext = function(){
-  // var random = Math.floor(Math.random() * (triviaPrompts.length));
   clicked++;
 
   if ( questionCount <= (triviaPrompts.length-1)) {
