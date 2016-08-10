@@ -10,7 +10,7 @@ var setScore = function() {
 };
 
 var asked = [];
-var enabled = [];
+var questionAmount = 3;
 
 jQuery(document).ready(function($){
     $('body').on('click', '#reset',function (){
@@ -61,8 +61,6 @@ var triviaPrompts = [
   [ "How many times have the Olympics been held in South America before 2016?", ["Once", "Twice", "Never"], "C", ["A", "B"] ],
 
   [ "Which events are included for the <br /> first time in decades?", ["Golf & Cycling-BMX", "Rugby & Golf", "Rugby & Cricket"], "B", ["A", "C"] ],
-
-  [ "What is lit with a flame during <br /> the opening ceremony?", ["The Olympic Cauldron", "The Olympic Mascot", "The Olympic Torch"], "C", ["A", "B"] ],
 
   [ "The torch relay began on April 21st <br /> in which city?", ["Olympia", "Rio de Janeiro", "London"], "A", ["B", "C"] ],
 
@@ -169,6 +167,7 @@ var rightAnswer = function() {
     setScore();
     clickCount++;
     $(".next").show();
+    asked.push(triviaPrompts);
   };
 
   var wrongAnswer = function () {
@@ -179,6 +178,7 @@ var rightAnswer = function() {
     $(".right-or-wrong").html("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
     clickCount++;
     $(".next").show();
+    asked.push(triviaPrompts);
     }
   };
 
@@ -192,6 +192,7 @@ var rightAnswer = function() {
 };
 
 var onNext = function(){
+asked.push(triviaPrompts);
   clicked++;
 
   if ( questionCount <= (triviaPrompts.length-1)) {
@@ -202,6 +203,15 @@ var onNext = function(){
     console.log("questionCount++;")
     clickCount = 0;
     chooseAnswer();
+  }
+
+  function existingQuestions(){
+    for (var i = 0; i < asked.length; i++){
+      if (asked[i] === triviaPrompts){
+        return true;
+      }
+    }
+    return false;
   }
 
 //end after 3 questions
@@ -235,4 +245,3 @@ $("html").on("keydown", function(e){
 addQAs();
 setScore();
 chooseAnswer();
-// reset();
