@@ -12,6 +12,12 @@ var setScore = function() {
 var asked = [];
 var questionAmount = 3;
 
+// $(document).ready(function(){
+//   $(".container3").onload.hide();
+// });
+
+
+
 jQuery(document).ready(function($){
     $('body').on('click', '#reset',function (){
       clicked = 0;
@@ -26,6 +32,9 @@ jQuery(document).ready(function($){
     chooseAnswer();
   });
 
+  // $(document).ready(function(){
+  //     $('.container3').class('hide');
+  //   });
   $(document).ready(function(){
       $('.next').on('click');
     });
@@ -160,6 +169,7 @@ var rightAnswer = function() {
       $("#" + triviaPrompts[questionCount][2]).css("color", "green"); // replace this code
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
+      // $(".container3").show();
       $(".right-or-wrong").show();
       $(".right-or-wrong").html("You are correct!");
       score = score + 1;
@@ -197,6 +207,7 @@ asked.push(triviaPrompts);
 
   if ( questionCount <= (triviaPrompts.length-1)) {
     addQAs();
+    // $(".container3").hide();
     $(".right-or-wrong").hide();
     $(".next").hide();
     $(".answer").css("color", "white");
