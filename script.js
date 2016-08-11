@@ -150,8 +150,16 @@ var triviaPrompts = [
 
   ["The Coffee Bistro serves Intelligentsia coffee.", ["True", "--or--", "False" ], "A", ["B", "C"] ]
 ];
-
-
+// function shuffle(a) {
+//     var j, x, i;
+//     for (i = a.length; i; i--) {
+//         j = Math.floor(Math.random() * i);
+//         x = a[i - 1];
+//         a[i - 1] = a[j];
+//         a[j] = x;
+//     }
+// }
+// shuffle(triviaPrompts);
 
 function addQAs (){
 questionCount = Math.floor(Math.random() * triviaPrompts.length);
@@ -178,7 +186,7 @@ var rightAnswer = function() {
     clickCount++;
     $(".next").show();
     $(".score").hide();
-    asked.push(triviaPrompts);
+    triviaPrompts.pop(asked);
   };
 
   var wrongAnswer = function () {
@@ -189,7 +197,7 @@ var rightAnswer = function() {
     $(".right-or-wrong").html("That is wrong! <br /> The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
     clickCount++;
     $(".next").show();
-    asked.push(triviaPrompts);
+    triviaPrompts.pop(asked);
     }
   };
 
@@ -203,7 +211,6 @@ var rightAnswer = function() {
 };
 
 var onNext = function(){
-asked.push(triviaPrompts);
   clicked++;
 
   if ( questionCount <= (triviaPrompts.length-1)) {
