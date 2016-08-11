@@ -177,6 +177,7 @@ var rightAnswer = function() {
     setScore();
     clickCount++;
     $(".next").show();
+    $(".score").hide();
     asked.push(triviaPrompts);
   };
 
@@ -185,7 +186,7 @@ var rightAnswer = function() {
     $(".answer").css("color", "grey");
     $(this).css("color", "red");
     $(".right-or-wrong").show();
-    $(".right-or-wrong").html("That is wrong! The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
+    $(".right-or-wrong").html("That is wrong! <br /> The correct answer is " +  $("#" + triviaPrompts[questionCount][2]).html() + ".");
     clickCount++;
     $(".next").show();
     asked.push(triviaPrompts);
@@ -210,6 +211,7 @@ asked.push(triviaPrompts);
     // $(".container3").hide();
     $(".right-or-wrong").hide();
     $(".next").hide();
+    $(".score").show();
     $(".answer").css("color", "white");
     console.log("questionCount++;")
     clickCount = 0;
