@@ -9,16 +9,8 @@ var setScore = function() {
   }
 };
 
-var asked = [];
-var questionAmount = 3;
-
-// $(document).ready(function(){
-//   $(".container3").onload.hide();
-// });
-
-
-
-jQuery(document).ready(function($){
+//reset game
+$(document).ready(function($){
     $('body').on('click', '#reset',function (){
       clicked = 0;
         clickCount = 0;
@@ -32,9 +24,7 @@ jQuery(document).ready(function($){
     chooseAnswer();
   });
 
-  // $(document).ready(function(){
-  //     $('.container3').class('hide');
-  //   });
+  //go to next question
   $(document).ready(function(){
       $('.next').on('click');
     });
@@ -60,10 +50,10 @@ jQuery(document).ready(function($){
 
 	// close popup when clicking the esc keyboard button
 	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$('.cd-popup').removeClass('is-visible');
-	    }
-    });
+    if(event.which=='27'){
+      $('.cd-popup').removeClass('is-visible');
+    }
+  });
 });
 
 var triviaPrompts = [
@@ -150,16 +140,6 @@ var triviaPrompts = [
 
   ["The Coffee Bistro serves Intelligentsia coffee.", ["True", "--or--", "False" ], "A", ["B", "C"] ]
 ];
-// function shuffle(a) {
-//     var j, x, i;
-//     for (i = a.length; i; i--) {
-//         j = Math.floor(Math.random() * i);
-//         x = a[i - 1];
-//         a[i - 1] = a[j];
-//         a[j] = x;
-//     }
-// }
-// shuffle(triviaPrompts);
 
 function addQAs (){
 questionCount = Math.floor(Math.random() * triviaPrompts.length);
@@ -174,10 +154,9 @@ var chooseAnswer = function(){
 
 var rightAnswer = function() {
     if (clickCount < 1) {
-      $("#" + triviaPrompts[questionCount][2]).css("color", "green"); // replace this code
+      $("#" + triviaPrompts[questionCount][2]).css("color", "green");
       $("#" + triviaPrompts[questionCount][3][0]).css("color", "grey");
       $("#" + triviaPrompts[questionCount][3][1]).css("color", "grey");
-      // $(".container3").show();
       $(".right-or-wrong").show();
       $(".right-or-wrong").html("You are correct!");
       score = score + 1;
@@ -212,10 +191,8 @@ var rightAnswer = function() {
 
 var onNext = function(){
   clicked++;
-
   if ( questionCount <= (triviaPrompts.length-1)) {
     addQAs();
-    // $(".container3").hide();
     $(".right-or-wrong").hide();
     $(".next").hide();
     $(".score").show();
@@ -238,29 +215,28 @@ var onNext = function(){
     if ( clicked === 3 ) {
       console.log("Score is 3");
       $(document).ready(function () {
-      if (score=== 3){
-        $('.cd-popup3').addClass('is-visible');
-      } else if ( score === 2) {
-      $('.cd-popup2').addClass('is-visible');
-    } else if  (score ===1){
-      $('.cd-popup1').addClass('is-visible');
-    } else {
-      $('.cd-popup').addClass('is-visible');
-    }
-
-    })
-    }
-  }
-
-// goes to next question on click AND on keydown - enter key
-$(".next").on("click", onNext);
-$("html").on("keydown", function(e){
-  if ($(".next").css("display") !== "none"){
-    if (e.keyCode == 13) {
-      onNext();
+        if (score=== 3){
+          $('.cd-popup3').addClass('is-visible');
+        } else if ( score === 2) {
+          $('.cd-popup2').addClass('is-visible');
+        } else if  (score ===1){
+          $('.cd-popup1').addClass('is-visible');
+        } else {
+          $('.cd-popup').addClass('is-visible');
+        }
+      })
     }
   }
-});
+
+  // goes to next question on click AND on keydown - enter key
+  $(".next").on("click", onNext);
+  $("html").on("keydown", function(e){
+    if ($(".next").css("display") !== "none"){
+      if (e.keyCode == 13) {
+        onNext();
+      }
+    }
+  });
 
 addQAs();
 setScore();
